@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import fakeData from "../fakeData";
-import Business from "./Business";
+import { Business } from ".";
+import fakeData from "../../fakeData";
 
 function BusinessList() {
   const [businesses, setBusinesses] = useState([]);
@@ -12,7 +12,12 @@ function BusinessList() {
   return (
     <div className="BusinessList">
       {businesses.map((business, id) => {
-        return <Business key={id} business={business} />;
+        return (
+          <Business
+            key={id}
+            business={business}
+          />
+        );
       })}
     </div>
   );
