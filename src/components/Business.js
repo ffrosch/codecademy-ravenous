@@ -1,33 +1,26 @@
 function Business({ business }) {
-  const {
-    name,
-    image,
-    address,
-    city,
-    state,
-    zipcode,
-    category,
-    rating,
-    reviewcount,
-  } = business;
-
   return (
-    <div>
+    <div className="card">
       <img
-        src={image}
+        src={business.image}
         alt="Photograph of the restaurant"
         width="400"
         height="300"></img>
-      <h3>{name}</h3>
-      <div>
-        {category} | {rating} Stars | {reviewcount} Reviews
-      </div>
-      <div>
-        <p>{address}</p>
-        <p>{city}</p>
+      <div className="container">
+        <h4>
+          <b>{business.name}</b>
+        </h4>
         <p>
-          {state} {zipcode}
+          {business.category} | {business.rating} Stars | {business.reviewcount}{" "}
+          Reviews
         </p>
+        <div>
+          <p>{business.address}</p>
+          <p>{business.city}</p>
+          <p>
+            {business.state} {business.zipcode}
+          </p>
+        </div>
       </div>
     </div>
   );
