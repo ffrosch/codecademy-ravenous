@@ -1,12 +1,13 @@
+import styles from "./styles.module.css";
+
 function Business({ business }) {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <img
+        className={styles.img}
         src={business.image}
-        alt="Photograph of the restaurant"
-        width="400"
-        height="300"></img>
-      <div className="container">
+        alt="Photograph of the restaurant"></img>
+      <div className={styles.cardText}>
         <h4>
           <b>{business.name}</b>
         </h4>
