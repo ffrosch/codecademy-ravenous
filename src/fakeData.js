@@ -8,7 +8,7 @@ const fakeData = [
     state: "NY",
     zipcode: 10101,
     category: "Italian",
-    rating: 4.5,
+    rating: 1,
     reviewcount: 90,
   },
   {
@@ -20,7 +20,7 @@ const fakeData = [
     state: "NY",
     zipcode: 10101,
     category: "Italian",
-    rating: 4.5,
+    rating: 2.5,
     reviewcount: 90,
   },
   {
@@ -32,7 +32,7 @@ const fakeData = [
     state: "NY",
     zipcode: 10101,
     category: "Italian",
-    rating: 4.5,
+    rating: 3,
     reviewcount: 90,
   },
   {

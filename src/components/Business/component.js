@@ -1,19 +1,31 @@
 import styles from "./styles.module.css";
 
 function Business({ business }) {
+  const getStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (Math.floor(rating) > i) {
+        stars.push(<span className={`fa fa-star ${styles.checked}`}></span>);
+      } else {
+        stars.push(<span className="fa fa-star"></span>);
+      }
+    }
+    return stars;
+  };
+
   return (
     <div className={styles.card}>
       <img
         className={styles.img}
         src={business.image}
-        alt="Photograph of the restaurant"></img>
+        alt={`Photograph of the restaurant ${business.name}`}></img>
       <div className={styles.cardText}>
         <h4>
           <b>{business.name}</b>
         </h4>
         <p>
-          {business.category} | {business.rating} Stars | {business.reviewcount}{" "}
-          Reviews
+          {business.category} | {business.reviewcount} Reviews |{" "}
+          {getStars(business.rating)} ({business.rating})
         </p>
         <div>
           <p>{business.address}</p>
