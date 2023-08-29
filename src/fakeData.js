@@ -10,6 +10,7 @@ const fakeData = [
     category: "Italian",
     rating: 1,
     reviewcount: 90,
+    id: 1,
   },
   {
     image:
@@ -22,6 +23,7 @@ const fakeData = [
     category: "Italian",
     rating: 2.5,
     reviewcount: 90,
+    id: 2,
   },
   {
     image:
@@ -34,6 +36,7 @@ const fakeData = [
     category: "Italian",
     rating: 3,
     reviewcount: 90,
+    id: 3,
   },
   {
     image:
@@ -46,6 +49,7 @@ const fakeData = [
     category: "Italian",
     rating: 4.5,
     reviewcount: 90,
+    id: 4,
   },
   {
     image:
@@ -58,6 +62,7 @@ const fakeData = [
     category: "Italian",
     rating: 4.5,
     reviewcount: 90,
+    id: 5,
   },
 ];
 

@@ -11,26 +11,27 @@ function BusinessList() {
   }, []);
 
   const renderRow = (businesses) => {
-    return (
-      <div className={styles.row}>
-        {businesses.map((business, id) => {
-          return (
-            <div className={styles.column}>
-              <Business
-                key={id}
-                business={business}
-              />
-            </div>
-          );
-        })}
-      </div>
-    );
+    return businesses.map((business) => {
+      return (
+        <div
+          className={styles.column}
+          key={business.id}>
+          <Business business={business} />
+        </div>
+      );
+    });
   };
 
   const renderRows = (businesses) => {
     const rows = [];
     for (let i = 0; i < businesses.length; i += 3) {
-      rows.push(renderRow(businesses.slice(i, i + 3)));
+      rows.push(
+        <div
+          className={styles.row}
+          key={i}>
+          {renderRow(businesses.slice(i, i + 3))}
+        </div>,
+      );
     }
     return rows;
   };

@@ -5,9 +5,17 @@ function Business({ business }) {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (Math.floor(rating) > i) {
-        stars.push(<span className={`fa fa-star ${styles.checked}`}></span>);
+        stars.push(
+          <span
+            key={i}
+            className={`fa fa-star ${styles.checked}`}></span>,
+        );
       } else {
-        stars.push(<span className="fa fa-star"></span>);
+        stars.push(
+          <span
+            key={i}
+            className="fa fa-star"></span>,
+        );
       }
     }
     return stars;
