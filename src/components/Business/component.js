@@ -15,10 +15,15 @@ function Business({ business }) {
 
   return (
     <div className={styles.card}>
-      <img
-        className={styles.img}
-        src={business.image}
-        alt={`Photograph of the restaurant ${business.name}`}></img>
+      <div className={styles.imgContainer}>
+        <img
+          className={styles.img}
+          src={business.image}
+          alt={`Photograph of the restaurant ${business.name}`}></img>
+        <div className={styles.imgOverlay}>
+          <div className={styles.imgText}>{business.name}</div>
+        </div>
+      </div>
       <div className={styles.cardText}>
         <h4>
           <b>{business.name}</b>
