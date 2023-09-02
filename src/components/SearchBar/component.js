@@ -1,4 +1,5 @@
 import { useState } from "react";
+import globalStyles from "../../styles.module.css";
 import styles from "./styles.module.css";
 
 function SearchBar({ setBusinesses }) {
@@ -43,29 +44,31 @@ function SearchBar({ setBusinesses }) {
           <li onClick={() => setSortBy("review_count")}>Review Count</li>
         </ul>
       </div>
-      <div id="searchBusiness">
-        <label htmlFor="business">Search by name</label>
-        <input
-          type="text"
-          name="business"
-          id="business"
-          value={business}
-          onChange={({ target }) => {
-            setBusiness(target.value);
-          }}
-        />
-      </div>
-      <div id="searchLocation">
-        <label htmlFor="location">Search by location</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          value={location}
-          onChange={({ target }) => {
-            setLocation(target.value);
-          }}
-        />
+      <div className={globalStyles.row}>
+        <div id="searchBusiness">
+          <label htmlFor="business">Search by name</label>
+          <input
+            type="text"
+            name="business"
+            id="business"
+            value={business}
+            onChange={({ target }) => {
+              setBusiness(target.value);
+            }}
+          />
+        </div>
+        <div id="searchLocation">
+          <label htmlFor="location">Search by location</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            value={location}
+            onChange={({ target }) => {
+              setLocation(target.value);
+            }}
+          />
+        </div>
       </div>
       <input
         type="submit"

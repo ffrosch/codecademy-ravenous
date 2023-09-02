@@ -1,0 +1,12 @@
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  width: 50%;
+  margin: auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

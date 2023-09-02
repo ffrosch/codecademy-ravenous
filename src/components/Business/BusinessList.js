@@ -1,4 +1,5 @@
 import { Business } from ".";
+import globalStyles from "../../styles.module.css";
 import styles from "./styles.module.css";
 
 function BusinessList({ businesses }) {
@@ -19,7 +20,7 @@ function BusinessList({ businesses }) {
     for (let i = 0; i < businesses.length; i += 3) {
       rows.push(
         <div
-          className={styles.row}
+          className={globalStyles.row}
           key={i}>
           {renderRow(businesses.slice(i, i + 3))}
         </div>,
