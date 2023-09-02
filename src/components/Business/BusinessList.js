@@ -1,15 +1,7 @@
-import { useEffect, useState } from "react";
 import { Business } from ".";
-import fakeData from "../../fakeData";
 import styles from "./styles.module.css";
 
-function BusinessList() {
-  const [businesses, setBusinesses] = useState([]);
-
-  useEffect(() => {
-    setBusinesses(fakeData);
-  }, []);
-
+function BusinessList({ businesses }) {
   const renderRow = (businesses) => {
     return businesses.map((business) => {
       return (
