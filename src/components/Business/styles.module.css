@@ -1,3 +1,9 @@
+address {
+  font-style: normal;
+  font-weight: 300;
+  text-align: left;
+}
+
 /* Remove extra left and right margins, due to padding in columns */
 .row {
   margin: 0 -5px;
@@ -30,6 +36,7 @@
   margin-bottom: 25px;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 25px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -38,8 +45,9 @@
 }
 
 .cardText {
-  text-align: center;
-  padding: 15px 0px 2px 0px;
+  text-align: left;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .checked {

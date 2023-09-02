@@ -32,26 +32,33 @@ function Business({ business }) {
           <div className={styles.imgText}>{business.name}</div>
         </div>
       </div>
-      <div className={styles.cardText}>
-        <h4>
+      <div
+        className={styles.cardText}
+        style={{ overflow: "hidden" }}>
+        <h3>
           <b>{business.name}</b>
-        </h4>
-        <p>
-          {business.categories[0].title} | {business.review_count} Reviews |{" "}
-          {getStars(business.rating)} ({business.rating})
-        </p>
-        <div>
-          <p>
+        </h3>
+        <div style={{ width: "50%", float: "left" }}>
+          <address>
             {[
               business.location.address1,
               business.location.address2,
               business.location.address3,
             ].join(" ")}
-          </p>
-          <p>{business.location.city}</p>
-          <p>
+            <br />
+            {business.location.city}
+            <br />
             {business.location.state} {business.location.zip_code}
-          </p>
+            <br />
+          </address>
+        </div>
+        <div style={{ width: "50%", float: "right", textAlign: "right" }}>
+          {business.categories[0].title}
+          <br />
+          {getStars(business.rating)} ({business.rating})
+          <br />
+          {business.review_count} Reviews
+          <br />
         </div>
       </div>
     </div>
