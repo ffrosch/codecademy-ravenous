@@ -26,7 +26,7 @@ function Business({ business }) {
       <div className={styles.imgContainer}>
         <img
           className={styles.img}
-          src={business.image}
+          src={business.image_url}
           alt={`Photograph of the restaurant ${business.name}`}></img>
         <div className={styles.imgOverlay}>
           <div className={styles.imgText}>{business.name}</div>
@@ -37,14 +37,20 @@ function Business({ business }) {
           <b>{business.name}</b>
         </h4>
         <p>
-          {business.category} | {business.reviewcount} Reviews |{" "}
+          {business.categories[0].title} | {business.review_count} Reviews |{" "}
           {getStars(business.rating)} ({business.rating})
         </p>
         <div>
-          <p>{business.address}</p>
-          <p>{business.city}</p>
           <p>
-            {business.state} {business.zipcode}
+            {[
+              business.location.address1,
+              business.location.address2,
+              business.location.address3,
+            ].join(" ")}
+          </p>
+          <p>{business.location.city}</p>
+          <p>
+            {business.location.state} {business.location.zip_code}
           </p>
         </div>
       </div>
