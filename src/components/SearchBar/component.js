@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./styles.module.css";
 
 function SearchBar({ setBusinesses }) {
   const [business, setBusiness] = useState("");
@@ -36,7 +37,7 @@ function SearchBar({ setBusinesses }) {
       id="searchBar"
       onSubmit={onSubmit}>
       <div id="sortBy">
-        <ul>
+        <ul className={styles.sortBy}>
           <li onClick={() => setSortBy("best_match")}>Best Match</li>
           <li onClick={() => setSortBy("rating")}>Highest Rating</li>
           <li onClick={() => setSortBy("review_count")}>Review Count</li>
