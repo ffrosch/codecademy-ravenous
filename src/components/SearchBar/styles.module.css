@@ -44,6 +44,7 @@
   list-style-type: none;
   padding-bottom: 16px;
   text-align: justify;
+  text-shadow: 0px 0px 6px black;
 }
 
 .ul li {
@@ -54,7 +55,7 @@
 }
 
 .ul li:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: hsla(43, 100%, 49%, 0.75);
   border-radius: 6px;
   cursor: pointer;
 }
