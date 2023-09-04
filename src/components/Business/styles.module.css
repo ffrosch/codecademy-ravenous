@@ -1,7 +1,9 @@
-address {
+.address {
+  float: left;
   font-style: normal;
   font-weight: 300;
   text-align: left;
+  width: 50%;
 }
 
 .column {
@@ -32,12 +34,13 @@ address {
 }
 
 .cardText {
-  text-align: left;
+  overflow: hidden;
   padding-left: 25px;
   padding-right: 25px;
+  text-align: left;
 }
 
-.checked {
+.filled {
   color: orange;
 }
 
@@ -87,4 +90,17 @@ address {
   font-size: 2.5em;
   font-variant: small-caps;
   text-shadow: 2px 2px 5px grey;
+}
+
+.rating {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+.restaurantType {
+  color: goldenrod;
+  font-size: larger;
+  font-variant: small-caps;
+  font-weight: bold;
 }

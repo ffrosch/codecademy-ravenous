@@ -1,23 +1,28 @@
 import styles from "./styles.module.css";
 
 function Business({ business }) {
+  const getStreet = (location) => {
+    const street = [
+      location.address1,
+      location.address2,
+      location.address3,
+    ].join(" ");
+    return street;
+  };
+
   const getStars = (rating) => {
+    const emptyStar = "fa fa-star";
+    const filledStar = `fa fa-star ${styles.filled}`;
+
     const stars = [];
     for (let i = 0; i < 5; i++) {
-      if (Math.floor(rating) > i) {
-        stars.push(
-          <span
-            key={i}
-            className={`fa fa-star ${styles.checked}`}></span>,
-        );
-      } else {
-        stars.push(
-          <span
-            key={i}
-            className="fa fa-star"></span>,
-        );
-      }
+      stars.push(
+        <span
+          key={i}
+          className={Math.floor(rating) > i ? filledStar : emptyStar}></span>,
+      );
     }
+
     return stars;
   };
 
@@ -29,35 +34,33 @@ function Business({ business }) {
           src={business.image_url}
           alt={`Photograph of the restaurant ${business.name}`}></img>
         <div className={styles.imgOverlay}>
-          <div className={styles.imgText}>{business.name}</div>
+          <span className={styles.imgText}>{business.name}</span>
         </div>
       </div>
-      <div
-        className={styles.cardText}
-        style={{ overflow: "hidden" }}>
+      <div className={styles.cardText}>
         <h3>
           <b>{business.name}</b>
         </h3>
-        <div style={{ width: "50%", float: "left" }}>
-          <address>
-            {[
-              business.location.address1,
-              business.location.address2,
-              business.location.address3,
-            ].join(" ")}
-            <br />
-            {business.location.city}
-            <br />
-            {business.location.state} {business.location.zip_code}
-            <br />
-          </address>
-        </div>
-        <div style={{ width: "50%", float: "right", textAlign: "right" }}>
-          {business.categories[0].title}
+
+        <address className={styles.address}>
+          {getStreet(business.location)}
           <br />
-          {getStars(business.rating)} ({business.rating})
+          {business.location.city}
           <br />
-          {business.review_count} Reviews
+          {business.location.state} {business.location.zip_code}
+          <br />
+        </address>
+
+        <div className={styles.rating}>
+          <span className={styles.restaurantType}>
+            {business.categories[0].title}
+          </span>
+          <br />
+          <span>
+            {getStars(business.rating)} ({business.rating})
+          </span>
+          <br />
+          <span>{business.review_count} Reviews</span>
           <br />
         </div>
       </div>
