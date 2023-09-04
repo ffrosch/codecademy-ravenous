@@ -34,47 +34,48 @@ function SearchBar({ setBusinesses }) {
   };
 
   return (
-    <form
-      id="searchBar"
-      onSubmit={onSubmit}>
-      <div id="sortBy">
-        <ul className={styles.sortBy}>
-          <li onClick={() => setSortBy("best_match")}>Best Match</li>
-          <li onClick={() => setSortBy("rating")}>Highest Rating</li>
-          <li onClick={() => setSortBy("review_count")}>Review Count</li>
-        </ul>
-      </div>
-      <div className={globalStyles.row}>
-        <div id="searchBusiness">
-          <label htmlFor="business">Search by name</label>
+    <div className={globalStyles.row50}>
+      <form
+        onSubmit={onSubmit}
+        className={styles.form}>
+        <div className={globalStyles.row50}>
+          <ul className={styles.ul}>
+            <li onClick={() => setSortBy("best_match")}>Best Match</li>
+            <li onClick={() => setSortBy("rating")}>Highest Rating</li>
+            <li onClick={() => setSortBy("review_count")}>Review Count</li>
+          </ul>
+        </div>
+
+        <div className={globalStyles.row}>
           <input
             type="text"
-            name="business"
-            id="business"
+            className={styles.inputText}
             value={business}
+            placeholder="Search Business"
             onChange={({ target }) => {
               setBusiness(target.value);
             }}
           />
-        </div>
-        <div id="searchLocation">
-          <label htmlFor="location">Search by location</label>
+
           <input
             type="text"
-            name="location"
-            id="location"
+            className={styles.inputText}
             value={location}
+            placeholder="Where?"
             onChange={({ target }) => {
               setLocation(target.value);
             }}
           />
         </div>
-      </div>
-      <input
-        type="submit"
-        value="Let's Go"
-        id="startSearch"></input>
-    </form>
+
+        <div className={globalStyles.row}>
+          <input
+            type="submit"
+            className={styles.inputSubmit}
+            value="Let's Go"></input>
+        </div>
+      </form>
+    </div>
   );
 }
 

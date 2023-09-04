@@ -20,7 +20,7 @@ function BusinessList({ businesses }) {
     for (let i = 0; i < businesses.length; i += 3) {
       rows.push(
         <div
-          className={globalStyles.row}
+          className={globalStyles.row50}
           key={i}>
           {renderRow(businesses.slice(i, i + 3))}
         </div>,
